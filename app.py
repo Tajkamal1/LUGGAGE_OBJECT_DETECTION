@@ -18,8 +18,8 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['RESULTS_FOLDER'] = RESULTS_FOLDER
 
 # Load both YOLO models
-model1= YOLO('yolov8n.pt')
-model2=YOLO('yolov8x.pt')
+#model1= YOLO('yolov8n.pt')
+#model2=YOLO('yolov8x.pt')
 model3 = YOLO('runs/detect/train4/weights/best.pt')
 model4 = YOLO('runs/detect/train3/weights/best.pt')
 
@@ -43,7 +43,7 @@ def detect_objects_yolo_seg(image_path):
         threat_items = []
 
         # Run both models and plot predictions on the same image
-        for model in [model1,model2,model3,model4]:
+        for model in [model3,model4]:
             results = model.predict(source=img, save=False)[0]
             
             if len(results.boxes) > 0:
@@ -112,3 +112,4 @@ def result_file(filename):
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
+
