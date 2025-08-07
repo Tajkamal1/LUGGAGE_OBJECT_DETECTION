@@ -1,0 +1,17 @@
+
+train: dataset/train/images
+val: dataset/val/images
+
+# Classes
+names:
+  0: gun
+  1: knife
+  2: blade
+  3: shuriken
+  4: spring
+  5: paperclip
+  6: zipper
+  7: bottle
+  8: scrue
+  9: headset
+  10: speacts
